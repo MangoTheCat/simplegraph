@@ -10,8 +10,10 @@
 [![](http://www.r-pkg.org/badges/version/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
 
-
-TODO
+Simple classic graph algorithms for simple graph classes.
+Graphs may possess vertex and edge attributes. 'simplegraph' has
+to dependencies and it is writting entirely in R, so it is easy to
+install.
 
 ## Installation
 

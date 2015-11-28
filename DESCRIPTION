@@ -3,10 +3,14 @@ Title: Simple Graph Data Types and Basic Algorithms
 Version: 1.0.0
 Author: Gabor Csardi
 Maintainer: Gabor Csardi <gcsardi@mango-solutions.com>
-Description: TODO
+Description: Simple classic graph algorithms for simple graph classes.
+    Graphs may possess vertex and edge attributes. 'simplegraph' has
+    to dependencies and it is writting entirely in R, so it is easy to
+    install.
 License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/mangothecat/simplegraph
 BugReports: https://github.com/mangothecat/simplegraph/issues
-Suggests: 
+Suggests:
     testthat
+RoxygenNote: 5.0.1
