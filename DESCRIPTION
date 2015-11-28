@@ -1,0 +1,12 @@
+Package: simplegraph
+Title: Simple Graph Data Types and Basic Algorithms
+Version: 1.0.0
+Author: Gabor Csardi
+Maintainer: Gabor Csardi <gcsardi@mango-solutions.com>
+Description: TODO
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github.com/mangothecat/simplegraph
+BugReports: https://github.com/mangothecat/simplegraph/issues
+Suggests: 
+    testthat
