@@ -34,6 +34,191 @@ devtools::install_github("mangothecat/simplegraph")
 library(simplegraph)
 ```
 
+## Creating graphs
+
+`simplegraph` has two ways of creating graphs from data.
+The first one is an adjacency list containing vertex names.
+This is Euler's famous graph of the bridges of Koenigsberg.
+Note that all graphs are directed in `simplegraph`. Undirected graphs
+can be emulated with bidirectional edges.
+
+```{r}
+bridges <- graph(list(
+  "Altstadt-Loebenicht" = c(
+    "Kneiphof",
+    "Kneiphof",
+    "Lomse"
+  ),
+  "Kneiphof" = c(
+    "Altstadt-Loebenicht",
+    "Altstadt-Loebenicht",
+    "Vorstadt-Haberberg",
+    "Vorstadt-Haberberg",
+    "Lomse"
+  ),
+  "Vorstadt-Haberberg" = c(
+    "Kneiphof",
+    "Kneiphof",
+    "Lomse"
+  ),
+  "Lomse" = c(
+    "Altstadt-Loebenicht",
+    "Kneiphof",
+    "Vorstadt-Haberberg"
+  )
+))
+bridges
+```
+
+## Graph metadata
+
+`simplegraph` supports graph metadata on vertices and edges.
+To create a graph with metadata, pass two data frames to `graph`,
+one for vertices, one for edges.
+
+The first column of the vertex data frame must contain the ids of
+the vertices in a character vector.
+
+The first columns of the edge data frame must contain the edges of
+the graph, i.e. the tail vertices and the head vertices, given
+by the vertex ids.
+
+Here is an example for a graph of actors and movies.
+
+```{r}
+vertices <- data.frame(
+  stringsAsFactors = FALSE,
+  name = c("Tom Hanks", "Cate Blanchett", "Matt Damon", "Kate Winslet",
+    "Saving Private Ryan", "Contagion", "The Talented Mr. Ripley"),
+  what = c("actor", "actor", "actor", "actor", "movie", "movie", "movie"),
+  born = c("1956-07-09", "1966-05-26", "1970-10-08", "1975-10-05",
+    NA, NA, NA),
+  gender = c("M", "F", "M", "F", NA, NA, NA),
+  year = c(NA, NA, NA, NA, 1998, 2011, 1999)
+)
+
+edges <- data.frame(
+  stringsAsFactors = FALSE,
+  actor = c("Tom Hanks", "Cate Blanchett", "Matt Damon", "Matt Damon", 
+    "Kate Winslet"),
+  movie = c("Saving Private Ryan", "The Talented Mr. Ripley",
+    "Saving Private Ryan", "The Talented Mr. Ripley", "Contagion")
+)
+actors <- graph(vertices, edges)
+```  
+
+```{r}
+vertices(actors)
+edges(actors)
+```
+
+## Basic queries
+
+Number of vertices and edges:
+
+```{r}
+order(bridges)
+size(bridges)
+```
+
+Adjacenct vertices:
+
+```{r}
+adjacent_vertices(bridges)$Lomse
+```
+
+This is a graph of function calls from the R package `pkgsnap`
+(https://github.com/mangothecat/pkgsnap):
+
+```{r}
+funcs <- graph(list(
+  drop_internal = character(0),
+  get_deps = c("get_description", "parse_deps",
+    "%||%", "drop_internal"),
+  get_description = "pkg_from_filename",
+  parse_deps = "str_trim",
+  cran_file = c("get_pkg_type", "r_minor_version", "cran_file"),
+  download_urls = c("split_pkg_names_versions", "cran_file"),
+  filename_from_url = character(0),
+  get_pkg_type = character(0),
+  pkg_download = c("dir_exists", "download_urls",
+    "filename_from_url", "try_download"),
+  r_minor_version = character(0),
+  try_download = character(0),
+  drop_missing_deps = character(0),
+  install_order = character(0),
+  restore = c("pkg_download", "drop_missing_deps",
+    "install_order", "get_deps"),
+  snap = character(0),
+  `%||%` = character(0),
+  data_frame = character(0),
+  dir_exists = character(0),
+  pkg_from_filename = character(0),
+  split_pkg_names_versions = "data_frame",
+  str_trim = character(0)
+))
+```
+
+List of vertices:
+
+```{r}
+vertices(funcs)
+```
+
+List of edges:
+
+```{r}
+edges(funcs)
+```
+
+## Manipulation
+
+Transposing a graph changes the directions of all edges to
+the opposite.
+
+```{r}
+edges(transpose(funcs))
+```
+
+## Walks on graphs
+
+Breadth-first search:
+
+```{r}
+bfs(funcs)
+```
+
+## Topological sort
+
+```{r}
+topological_sort(simplify(funcs))
+```
+
+## Multi-graphs and graphs with loop edges
+
+Detecting loop and multiple edges:
+
+```{r}
+is_loopy(funcs)
+is_multigraph(funcs)
+```
+
+Removing loop and multiple edges:
+
+```{r}
+is_loopy(remove_loops(funcs))
+is_multigraph(remove_multiple(funcs))
+```
+
+`simplify` removes both loops and multiple edges, so it creates
+a simple graph:
+
+```{r}
+is_loopy(simplify(funcs))
+is_multigraph(simplify(funcs))
+is_simple(simplify(funcs))
+```
+
 ## License
 
 MIT © [Mango Solutions](https://github.com/mangothecat).
