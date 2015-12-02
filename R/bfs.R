@@ -16,22 +16,32 @@ bfs <- function(graph, from = vertices(graph)) {
   V <- names(graph)
   N <- length(V)
   result <- character()
+  q <- character()
   marks <- structure(rep(FALSE, N), names = V)
 
   while (length(from)) {
 
     s <- from[1]
     from <- from[-1]
-    if (!marks[[s]]) result <- c(result, s)
-
-    for (n in graph[[s]]) {
-      if (!marks[[n]]) {
-        from <- c(from, n)
-        result <- c(result, n)
-        marks[[n]] <- TRUE
-      }
+    if (!marks[[s]]) {
+      result <- c(result, s)
+      marks[[s]] <- TRUE
+      q <- c(q, s)
     }
 
+    while (length(q)) {
+
+      s2 <- q[1]
+      q <- q[-1]
+
+      for (n in graph[[s2]]) {
+        if (!marks[[n]]) {
+          result <- c(result, n)
+          q <- c(q, n)
+          marks[[n]] <- TRUE
+        }
+      }
+    }
   }
 
   result
