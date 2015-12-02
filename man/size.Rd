@@ -15,4 +15,8 @@ Numeric scalar, the number of edges.
 \description{
 The size of the graph is the number of edges
 }
+\examples{
+G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+size(G)
+}
 

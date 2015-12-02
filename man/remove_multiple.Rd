@@ -16,6 +16,11 @@ Graph, without the multiple edges. (More precisely, from
 \description{
 Remove multiple edges from a graph
 }
+\examples{
+G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+is_multigraph(G)
+is_multigraph(remove_multiple(G))
+}
 \seealso{
 Other multigraphs: \code{\link{is_loopy}},
   \code{\link{is_multigraph}}, \code{\link{is_simple}},

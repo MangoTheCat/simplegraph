@@ -15,6 +15,13 @@ Another graph, with the multiple and loop edges removed.
 \description{
 Remove multiple and loop edges from a graph
 }
+\examples{
+G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+is_simple(G)
+
+G2 <- simplify(G)
+is_simple(G2)
+}
 \seealso{
 Other multigraphs: \code{\link{is_loopy}},
   \code{\link{is_multigraph}}, \code{\link{is_simple}},

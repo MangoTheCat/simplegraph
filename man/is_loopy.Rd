@@ -16,6 +16,13 @@ Logical scalar.
 A loopy graph has at least one loop edge: an edge from a vertex to
 itself.
 }
+\examples{
+G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+is_loopy(G)
+
+G2 <- simplify(G)
+is_loopy(G2)
+}
 \seealso{
 Other multigraphs: \code{\link{is_multigraph}},
   \code{\link{is_simple}}, \code{\link{remove_loops}},

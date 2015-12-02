@@ -4,7 +4,34 @@
 #' @param graph The graph.
 #' @return Character vector of vertex names.
 #'
+#' @family simple queries
 #' @export
+#' @examples
+#' bridges <- graph(list(
+#'   "Altstadt-Loebenicht" = c(
+#'     "Kneiphof",
+#'     "Kneiphof",
+#'     "Lomse"
+#'   ),
+#'   "Kneiphof" = c(
+#'     "Altstadt-Loebenicht",
+#'     "Altstadt-Loebenicht",
+#'     "Vorstadt-Haberberg",
+#'     "Vorstadt-Haberberg",
+#'     "Lomse"
+#'   ),
+#'   "Vorstadt-Haberberg" = c(
+#'     "Kneiphof",
+#'     "Kneiphof",
+#'     "Lomse"
+#'   ),
+#'   "Lomse" = c(
+#'     "Altstadt-Loebenicht",
+#'     "Kneiphof",
+#'     "Vorstadt-Haberberg"
+#'   )
+#' ))
+#' vertices(bridges)
 
 vertices <- function(graph) {
   graph <- as_graph_adjlist(graph)
@@ -18,7 +45,34 @@ vertices <- function(graph) {
 #'   vertices are in the fist two columns. The rest of the columns are
 #'   metadata.
 #'
+#' @family simple queries
 #' @export
+#' @examples
+#' bridges <- graph(list(
+#'   "Altstadt-Loebenicht" = c(
+#'     "Kneiphof",
+#'     "Kneiphof",
+#'     "Lomse"
+#'   ),
+#'   "Kneiphof" = c(
+#'     "Altstadt-Loebenicht",
+#'     "Altstadt-Loebenicht",
+#'     "Vorstadt-Haberberg",
+#'     "Vorstadt-Haberberg",
+#'     "Lomse"
+#'   ),
+#'   "Vorstadt-Haberberg" = c(
+#'     "Kneiphof",
+#'     "Kneiphof",
+#'     "Lomse"
+#'   ),
+#'   "Lomse" = c(
+#'     "Altstadt-Loebenicht",
+#'     "Kneiphof",
+#'     "Vorstadt-Haberberg"
+#'   )
+#' ))
+#' edges(bridges)
 
 edges <- function(graph) {
   graph <- as_graph_data_frame(graph)
@@ -32,7 +86,11 @@ edges <- function(graph) {
 #' @param graph The graph.
 #' @return Numeric scalar, the number of vertices.
 #'
+#' @family simple queries
 #' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' order(G)
 
 order <- function(graph) {
   graph <- as_graph_adjlist(graph)
@@ -45,6 +103,9 @@ order <- function(graph) {
 #' @return Numeric scalar, the number of edges.
 #'
 #' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' size(G)
 
 size <-function(graph) {
   graph <- as_graph_data_frame(graph)
@@ -59,7 +120,11 @@ size <-function(graph) {
 #' @return A named list of character vectors, the adjacent vertices
 #'   for each vertex.
 #'
+#' @family simple queries
 #' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' adjacent_vertices(G)
 
 adjacent_vertices <- function(graph) {
    graph <- as_graph_adjlist(graph)

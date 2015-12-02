@@ -15,4 +15,35 @@ Character vector of vertex names.
 \description{
 Vertices of a graph
 }
+\examples{
+bridges <- graph(list(
+  "Altstadt-Loebenicht" = c(
+    "Kneiphof",
+    "Kneiphof",
+    "Lomse"
+  ),
+  "Kneiphof" = c(
+    "Altstadt-Loebenicht",
+    "Altstadt-Loebenicht",
+    "Vorstadt-Haberberg",
+    "Vorstadt-Haberberg",
+    "Lomse"
+  ),
+  "Vorstadt-Haberberg" = c(
+    "Kneiphof",
+    "Kneiphof",
+    "Lomse"
+  ),
+  "Lomse" = c(
+    "Altstadt-Loebenicht",
+    "Kneiphof",
+    "Vorstadt-Haberberg"
+  )
+))
+vertices(bridges)
+}
+\seealso{
+Other simple queries: \code{\link{adjacent_vertices}},
+  \code{\link{edges}}, \code{\link{order}}
+}
 

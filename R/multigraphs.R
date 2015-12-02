@@ -8,6 +8,12 @@
 #'
 #' @family multigraphs
 #' @export
+#' @examples
+#' G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+#' is_simple(G)
+#'
+#' G2 <- simplify(G)
+#' is_simple(G2)
 
 is_simple <- function(graph) {
   ! is_loopy(graph) && ! is_multigraph(graph)
@@ -23,6 +29,12 @@ is_simple <- function(graph) {
 #'
 #' @family multigraphs
 #' @export
+#' @examples
+#' G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+#' is_loopy(G)
+#'
+#' G2 <- simplify(G)
+#' is_loopy(G2)
 
 is_loopy <- function(graph) {
 
@@ -46,6 +58,12 @@ is_loopy <- function(graph) {
 #'
 #' @family multigraphs
 #' @export
+#' @examples
+#' G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+#' is_multigraph(G)
+#'
+#' G2 <- simplify(G)
+#' is_multigraph(G2)
 
 is_multigraph <- function(graph) {
 
@@ -65,6 +83,12 @@ is_multigraph <- function(graph) {
 #'
 #' @family multigraphs
 #' @export
+#' @examples
+#' G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+#' is_simple(G)
+#'
+#' G2 <- simplify(G)
+#' is_simple(G2)
 
 simplify <- function(graph) {
   remove_loops(remove_multiple(graph))
@@ -77,6 +101,10 @@ simplify <- function(graph) {
 #'
 #' @family multigraphs
 #' @export
+#' @examples
+#' G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+#' is_loopy(G)
+#' is_loopy(remove_loops(G))
 
 remove_loops <- function(graph)
   UseMethod("remove_loops")
@@ -113,6 +141,10 @@ remove_loops.simplegraph_adjlist <- function(graph) {
 #'
 #' @family multigraphs
 #' @export
+#' @examples
+#' G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+#' is_multigraph(G)
+#' is_multigraph(remove_multiple(G))
 
 remove_multiple <- function(graph)
   UseMethod("remove_multiple")

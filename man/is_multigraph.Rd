@@ -16,6 +16,13 @@ Logical scalar.
 A multigraph has at least one pair or multiple edges,
 edges connecting the same (ordered) pair of vertices.
 }
+\examples{
+G <- graph(list(A = c("A", "B", "B"), B = c("A", "C"), C = "A"))
+is_multigraph(G)
+
+G2 <- simplify(G)
+is_multigraph(G2)
+}
 \seealso{
 Other multigraphs: \code{\link{is_loopy}},
   \code{\link{is_simple}}, \code{\link{remove_loops}},

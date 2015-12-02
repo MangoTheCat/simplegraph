@@ -15,4 +15,12 @@ Numeric scalar, the number of vertices.
 \description{
 The order of the graph is the number of vertices.
 }
+\examples{
+G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+order(G)
+}
+\seealso{
+Other simple queries: \code{\link{adjacent_vertices}},
+  \code{\link{edges}}, \code{\link{vertices}}
+}
 

@@ -15,4 +15,11 @@ sanitize(x, ...)
 This is mainly for internal checks, but occasionally it
 might also useful externally.
 }
+\examples{
+G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+sanitize(G)
+
+G <- c(G, list("this is not good" = c(1, 2, 3)))
+try(sanitize(G))
+}
 

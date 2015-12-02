@@ -17,4 +17,35 @@ Data frame of edge data and metadata. The tail and head
 \description{
 Edges of a graph
 }
+\examples{
+bridges <- graph(list(
+  "Altstadt-Loebenicht" = c(
+    "Kneiphof",
+    "Kneiphof",
+    "Lomse"
+  ),
+  "Kneiphof" = c(
+    "Altstadt-Loebenicht",
+    "Altstadt-Loebenicht",
+    "Vorstadt-Haberberg",
+    "Vorstadt-Haberberg",
+    "Lomse"
+  ),
+  "Vorstadt-Haberberg" = c(
+    "Kneiphof",
+    "Kneiphof",
+    "Lomse"
+  ),
+  "Lomse" = c(
+    "Altstadt-Loebenicht",
+    "Kneiphof",
+    "Vorstadt-Haberberg"
+  )
+))
+edges(bridges)
+}
+\seealso{
+Other simple queries: \code{\link{adjacent_vertices}},
+  \code{\link{order}}, \code{\link{vertices}}
+}
 
