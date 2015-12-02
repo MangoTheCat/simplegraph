@@ -14,6 +14,7 @@ transpose <- function(graph)
   UseMethod("transpose")
 
 #' @method transpose simplegraph_df
+#' @export
 
 transpose.simplegraph_df <- function(graph) {
   new_graph <- graph
@@ -23,6 +24,7 @@ transpose.simplegraph_df <- function(graph) {
 }
 
 #' @method transpose simplegraph_adjlist
+#' @export
 
 transpose.simplegraph_adjlist <- function(graph) {
   res <- structure(

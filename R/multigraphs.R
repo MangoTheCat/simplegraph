@@ -82,6 +82,7 @@ remove_loops <- function(graph)
   UseMethod("remove_loops")
 
 #' @method remove_loops simplegraph_df
+#' @export
 
 remove_loops.simplegraph_df <- function(graph) {
   graph$edges <- graph$edges[graph$edges[,1] != graph$edges[,2], ]
@@ -90,6 +91,7 @@ remove_loops.simplegraph_df <- function(graph) {
 }
 
 #' @method remove_loops simplegraph_adjlist
+#' @export
 
 remove_loops.simplegraph_adjlist <- function(graph) {
   graph(
@@ -116,6 +118,7 @@ remove_multiple <- function(graph)
   UseMethod("remove_multiple")
 
 #' @method remove_multiple simplegraph_df
+#' @export
 
 remove_multiple.simplegraph_df <- function(graph) {
   graph$edges <- graph$edges[ ! duplicated(graph$edges[,1:2]), ]
@@ -123,6 +126,7 @@ remove_multiple.simplegraph_df <- function(graph) {
 }
 
 #' @method remove_multiple simplegraph_adjlist
+#' @export
 
 remove_multiple.simplegraph_adjlist <- function(graph) {
   graph(lapply(graph, unique))
