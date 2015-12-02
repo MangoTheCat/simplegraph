@@ -12,6 +12,7 @@ graph.data.frame <- function(x, y, ...) {
 }
 
 #' @method sanitize simplegraph_df
+#' @export
 
 sanitize.simplegraph_df <- function(x, ...) {
   if (!"nodes" %in% names(x)) stop("No vertices found in data frame graph")

@@ -12,6 +12,7 @@ graph.list <- function(x, ...) {
 }
 
 #' @method sanitize simplegraph_adjlist
+#' @export
 
 sanitize.simplegraph_adjlist <- function(x, ...) {
   if (is.null(names(x))) stop("Adjacency list must be named")
