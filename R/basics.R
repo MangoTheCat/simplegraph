@@ -154,3 +154,47 @@ predecessors <- function(graph) {
 successors <- function(graph) {
   unclass(as_graph_adjlist(graph))
 }
+
+#' Incident edges
+#'
+#' @param graph Input graph.
+#' @param mode Whether to use \code{out} edges, \code{in} edges or
+#'   \code{all} edges.
+#' @return A list of data frames, each a set of edges.
+#'
+#' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' incident_edges(G, mode = "out")
+#' incident_edges(G, mode = "in")
+#' incident_edges(G, mode = "all")
+
+incident_edges <- function(graph, mode = c("out", "in", "all")) {
+
+  mode <- match.arg(mode)
+
+  V <- vertices(graph)
+  edges <- edges(as_graph_data_frame(graph))
+
+  res <- if (mode == "out") {
+    lapply(
+      V,
+      function(w) drop_rownames(edges[w == edges[,1], ])
+    )
+
+  } else if (mode == "in") {
+    lapply(
+      V,
+      function(w) drop_rownames(edges[w == edges[,2], ])
+    )
+
+  } else {
+    lapply(
+      V,
+      function(w) drop_rownames(edges[w == edges[,1] | w == edges[,2], ])
+    )
+  }
+
+  names(res) <- V
+  res
+}

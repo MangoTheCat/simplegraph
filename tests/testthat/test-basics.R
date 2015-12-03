@@ -83,3 +83,44 @@ test_that("predecessors and successors", {
   )
 
 })
+
+test_that("incident edges", {
+
+  G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+
+  expect_equal(
+    incident_edges(G),
+    list(
+      A = data_frame(from = c("A", "A"), to = c("B", "C")),
+      B = data_frame(from = "B", to ="C"),
+      C = data_frame(from = "C", to = "A")
+    )
+  )
+
+  expect_equal(
+    incident_edges(G, mode = "out"),
+    list(
+      A = data_frame(from = c("A", "A"), to = c("B", "C")),
+      B = data_frame(from = "B", to ="C"),
+      C = data_frame(from = "C", to = "A")
+    )
+  )
+
+  expect_equal(
+    incident_edges(G, mode = "in"),
+    list(
+      A = data_frame(from = "C", to = "A"),
+      B = data_frame(from = "A", to = "B"),
+      C = data_frame(from = c("A", "B"), to = c("C", "C"))
+    )
+  )
+
+  expect_equal(
+    incident_edges(G, mode = "all"),
+    list(
+      A = data_frame(from = c("A", "A", "C"), to = c("B", "C", "A")),
+      B = data_frame(from = c("A", "B"), to = c("B", "C")),
+      C = data_frame(from = c("A", "B", "C"), to = c("C", "C", "A"))
+    )
+  )
+})
