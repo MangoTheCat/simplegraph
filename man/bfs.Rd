@@ -4,7 +4,7 @@
 \alias{bfs}
 \title{Breadth-first search of a graph}
 \usage{
-bfs(graph, from = vertices(graph))
+bfs(graph, from = vertex_ids(graph))
 }
 \arguments{
 \item{graph}{Input graph.}

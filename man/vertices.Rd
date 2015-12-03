@@ -2,7 +2,7 @@
 % Please edit documentation in R/basics.R
 \name{vertices}
 \alias{vertices}
-\title{Vertices of a graph}
+\title{Vertices of a graph, with metadata}
 \usage{
 vertices(graph)
 }
@@ -13,7 +13,7 @@ vertices(graph)
 Character vector of vertex names.
 }
 \description{
-Vertices of a graph
+Vertices of a graph, with metadata
 }
 \examples{
 bridges <- graph(list(

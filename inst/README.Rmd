@@ -108,6 +108,7 @@ actors <- graph(vertices, edges)
 ```  
 
 ```{r}
+vertex_ids(actors)
 vertices(actors)
 edges(actors)
 ```

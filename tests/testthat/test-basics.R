@@ -1,15 +1,37 @@
 
 context("Basics")
 
+test_that("vertex_ids", {
+
+  g1 <- g1()
+  g2 <- g2()
+  g3 <- g3()
+
+  expect_equal(vertex_ids(g1), letters[1:5])
+  expect_equal(vertex_ids(g2), letters[1:5])
+  expect_equal(vertex_ids(g3), character())
+})
+
 test_that("vertices", {
 
   g1 <- g1()
   g2 <- g2()
   g3 <- g3()
 
-  expect_equal(vertices(g1), letters[1:5])
-  expect_equal(vertices(g2), letters[1:5])
-  expect_equal(vertices(g3), character())
+  expect_equal(
+    vertices(g1),
+    data_frame(id = c("a", "b", "c", "d", "e"))
+  )
+
+  expect_equal(
+    vertices(g2),
+    data_frame(id = c("a", "b", "c", "d", "e"))
+  )
+
+  expect_equal(
+    vertices(g3),
+    data_frame(id = character())
+  )
 })
 
 test_that("edges", {

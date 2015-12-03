@@ -133,7 +133,7 @@ actors <- graph(vertices, edges)
 
 
 ```r
-vertices(actors)
+vertex_ids(actors)
 ```
 
 ```
@@ -141,6 +141,21 @@ vertices(actors)
 #> [3] "Matt Damon"              "Kate Winslet"           
 #> [5] "Saving Private Ryan"     "Contagion"              
 #> [7] "The Talented Mr. Ripley"
+```
+
+```r
+vertices(actors)
+```
+
+```
+#>                      name  what       born gender year
+#> 1               Tom Hanks actor 1956-07-09      M   NA
+#> 2          Cate Blanchett actor 1966-05-26      F   NA
+#> 3              Matt Damon actor 1970-10-08      M   NA
+#> 4            Kate Winslet actor 1975-10-05      F   NA
+#> 5     Saving Private Ryan movie       <NA>   <NA> 1998
+#> 6               Contagion movie       <NA>   <NA> 2011
+#> 7 The Talented Mr. Ripley movie       <NA>   <NA> 1999
 ```
 
 ```r
@@ -230,17 +245,28 @@ vertices(funcs)
 ```
 
 ```
-#>  [1] "drop_internal"            "get_deps"                
-#>  [3] "get_description"          "parse_deps"              
-#>  [5] "cran_file"                "download_urls"           
-#>  [7] "filename_from_url"        "get_pkg_type"            
-#>  [9] "pkg_download"             "r_minor_version"         
-#> [11] "try_download"             "drop_missing_deps"       
-#> [13] "install_order"            "restore"                 
-#> [15] "snap"                     "%||%"                    
-#> [17] "data_frame"               "dir_exists"              
-#> [19] "pkg_from_filename"        "split_pkg_names_versions"
-#> [21] "str_trim"
+#>                        name
+#> 1             drop_internal
+#> 2                  get_deps
+#> 3           get_description
+#> 4                parse_deps
+#> 5                 cran_file
+#> 6             download_urls
+#> 7         filename_from_url
+#> 8              get_pkg_type
+#> 9              pkg_download
+#> 10          r_minor_version
+#> 11             try_download
+#> 12        drop_missing_deps
+#> 13            install_order
+#> 14                  restore
+#> 15                     snap
+#> 16                     %||%
+#> 17               data_frame
+#> 18               dir_exists
+#> 19        pkg_from_filename
+#> 20 split_pkg_names_versions
+#> 21                 str_trim
 ```
 
 List of edges:
@@ -320,19 +346,15 @@ bfs(funcs)
 ```
 #>  [1] "drop_internal"            "get_deps"                
 #>  [3] "get_description"          "parse_deps"              
-#>  [5] "%||%"                     "drop_internal"           
-#>  [7] "pkg_from_filename"        "str_trim"                
-#>  [9] "cran_file"                "get_pkg_type"            
-#> [11] "r_minor_version"          "cran_file"               
-#> [13] "download_urls"            "split_pkg_names_versions"
-#> [15] "filename_from_url"        "pkg_download"            
-#> [17] "dir_exists"               "download_urls"           
-#> [19] "filename_from_url"        "try_download"            
-#> [21] "drop_missing_deps"        "install_order"           
-#> [23] "restore"                  "pkg_download"            
-#> [25] "drop_missing_deps"        "install_order"           
-#> [27] "get_deps"                 "snap"                    
-#> [29] "data_frame"               "data_frame"
+#>  [5] "%||%"                     "pkg_from_filename"       
+#>  [7] "str_trim"                 "cran_file"               
+#>  [9] "get_pkg_type"             "r_minor_version"         
+#> [11] "download_urls"            "split_pkg_names_versions"
+#> [13] "data_frame"               "filename_from_url"       
+#> [15] "pkg_download"             "dir_exists"              
+#> [17] "try_download"             "drop_missing_deps"       
+#> [19] "install_order"            "restore"                 
+#> [21] "snap"
 ```
 
 ## Topological sort

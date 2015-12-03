@@ -1,5 +1,20 @@
 
-#' Vertices of a graph
+#' Vertex ids of a graph
+#'
+#' @param graph The graph.
+#' @return Character vector of vertex ids.
+#'
+#' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' vertex_ids(G)
+
+vertex_ids <- function(graph) {
+  graph <- as_graph_adjlist(graph)
+  names(graph)
+}
+
+#' Vertices of a graph, with metadata
 #'
 #' @param graph The graph.
 #' @return Character vector of vertex names.
@@ -34,8 +49,8 @@
 #' vertices(bridges)
 
 vertices <- function(graph) {
-  graph <- as_graph_adjlist(graph)
-  names(graph)
+  graph <- as_graph_data_frame(graph)
+  graph$nodes
 }
 
 #' Edges of a graph
@@ -173,7 +188,7 @@ incident_edges <- function(graph, mode = c("out", "in", "all")) {
 
   mode <- match.arg(mode)
 
-  V <- vertices(graph)
+  V <- vertex_ids(graph)
   edges <- edges(as_graph_data_frame(graph))
 
   res <- if (mode == "out") {

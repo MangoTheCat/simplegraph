@@ -37,7 +37,7 @@
 #' ))
 #' bfs(funcs)
 
-bfs <- function(graph, from = vertices(graph)) {
+bfs <- function(graph, from = vertex_ids(graph)) {
 
   graph <- as_graph_adjlist(graph)
 
