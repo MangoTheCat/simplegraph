@@ -67,3 +67,19 @@ test_that("adjacent vertices", {
     structure(list(), names = character())
   )
 })
+
+test_that("predecessors and successors", {
+
+  G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+
+  expect_equal(
+    predecessors(G),
+    list(A = c("C"), B = "A", C = c("A", "B"))
+  )
+
+  expect_equal(
+    successors(G),
+    list(A = c("B", "C"), B = "C", C = "A")
+  )
+
+})

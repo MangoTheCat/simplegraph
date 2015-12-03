@@ -130,3 +130,27 @@ adjacent_vertices <- function(graph) {
    graph <- as_graph_adjlist(graph)
    merge_named_lists(graph, transpose(graph))
 }
+
+#' Predecessors and successors
+#'
+#' @param graph Input graph
+#' @return Named list of character vectors, the predecessors or
+#'   the successors of each vertex.
+#'
+#' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' predecessors(G)
+#' successors(G)
+
+predecessors <- function(graph) {
+  graph <- as_graph_adjlist(graph)
+  unclass(transpose(graph))
+}
+
+#' @rdname predecessors
+#' @export
+
+successors <- function(graph) {
+  unclass(as_graph_adjlist(graph))
+}
