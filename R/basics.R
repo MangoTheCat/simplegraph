@@ -184,7 +184,7 @@ successors <- function(graph) {
 #' incident_edges(G, mode = "in")
 #' incident_edges(G, mode = "all")
 
-incident_edges <- function(graph, mode = c("out", "in", "all")) {
+incident_edges <- function(graph, mode = c("out", "in", "all", "total")) {
 
   mode <- match.arg(mode)
 

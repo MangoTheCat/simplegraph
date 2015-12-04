@@ -4,7 +4,7 @@
 \alias{incident_edges}
 \title{Incident edges}
 \usage{
-incident_edges(graph, mode = c("out", "in", "all"))
+incident_edges(graph, mode = c("out", "in", "all", "total"))
 }
 \arguments{
 \item{graph}{Input graph.}
