@@ -213,3 +213,35 @@ incident_edges <- function(graph, mode = c("out", "in", "all")) {
   names(res) <- V
   res
 }
+
+#' Degree of vertices
+#'
+#' @param graph Input graph.
+#' @param mode Whether to calculate \code{out}-degree, \code{in}-degree,
+#'   or the \code{total} degree.
+#' @return Named numeric vector of degrees.
+#'
+#' @export
+#' @examples
+#' G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+#' degree(G, mode = "out")
+#' degree(G, mode = "in")
+#' degree(G, mode = "total")
+
+degree <- function(graph, mode = c("out", "in", "total", "all")) {
+
+  mode <- match.arg(mode)
+
+  graph <- as_graph_adjlist(graph)
+  V <- vertex_ids(graph)
+
+  if (mode == "out") {
+    vapply(graph, length, 1L)
+
+  } else if (mode == "in") {
+    vapply(transpose(graph), length, 1L)
+
+  } else if (mode == "total" || mode == "all") {
+    vapply(graph, length, 1L) + vapply(transpose(graph), length, 1L)
+  }
+}
