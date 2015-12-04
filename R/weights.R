@@ -35,9 +35,15 @@
 is_weighted <- function(graph)
   UseMethod("is_weighted")
 
+#' @method is_weighted simplegraph_adjlist
+#' @export
+
 is_weighted.simplegraph_adjlist <- function(graph) {
   FALSE
 }
+
+#' @method is_weighted simplegraph_df
+#' @export
 
 is_weighted.simplegraph_df <- function(graph) {
   "weight" %in% colnames(graph$edges)
