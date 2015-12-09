@@ -39,9 +39,10 @@ library(simplegraph)
 
 `simplegraph` has two ways of creating graphs from data.
 The first one is an adjacency list containing vertex names.
-This is Euler's famous graph of the bridges of Koenigsberg.
 Note that all graphs are directed in `simplegraph`. Undirected graphs
 can be emulated with bidirectional edges.
+
+This is Euler's famous graph of the bridges of Koenigsberg:
 
 ```{r}
 bridges <- graph(list(
