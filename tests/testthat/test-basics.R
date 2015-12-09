@@ -146,3 +146,28 @@ test_that("incident edges", {
     )
   )
 })
+
+test_that("degree", {
+
+  G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
+
+  expect_equal(
+    degree(G, mode = "out"),
+    c(A = 2, B = 1, C = 1)
+  )
+
+  expect_equal(
+    degree(G, mode = "in"),
+    c(A = 1, B = 1, C = 2)
+  )
+
+  expect_equal(
+    degree(G, mode = "total"),
+    c(A = 3, B = 2, C = 3)
+  )
+
+  expect_equal(
+    degree(G, mode = "all"),
+    c(A = 3, B = 2, C = 3)
+  )
+})
