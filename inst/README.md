@@ -9,7 +9,7 @@
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/github/MangoTheCat/simplegraph?svg=true)](https://ci.appveyor.com/project/gaborcsardi/simplegraph)
 [![](http://www.r-pkg.org/badges/version/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/simplegraph)](http://www.r-pkg.org/pkg/simplegraph)
-[![Coverage Status](https://img.shields.io/codecov/c/github/mangothecat/simplegraph/master.svg)](https://codecov.io/github/mangothecat/simplegraph?branch=master)
+[![Coverage Status](https://img.shields.io/codecov/c/github/MangoTheCat/simplegraph/master.svg)](https://codecov.io/github/MangoTheCat/simplegraph?branch=master)
 
 Simple classic graph algorithms for simple graph classes.
 Graphs may possess vertex and edge attributes. 'simplegraph' has
