@@ -34,6 +34,8 @@ as_graph_adjlist.simplegraph_adjlist <- function(x, ...) {
   x
 }
 
+#' @importFrom utils modifyList
+
 as_graph_adjlist.simplegraph_df <- function(x, ...) {
 
   adjlist <- modifyList(
