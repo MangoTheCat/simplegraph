@@ -1,6 +1,6 @@
 Package: simplegraph
 Title: Simple Graph Data Types and Basic Algorithms
-Version: 1.0.0
+Version: 1.0.1
 Author: Gabor Csardi
 Maintainer: Gabor Csardi <gcsardi@mango-solutions.com>
 Description: Simple classic graph algorithms for simple graph classes.
