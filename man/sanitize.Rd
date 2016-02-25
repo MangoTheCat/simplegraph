@@ -13,7 +13,7 @@ sanitize(x, ...)
 }
 \description{
 This is mainly for internal checks, but occasionally it
-might also useful externally.
+might be useful externally.
 }
 \examples{
 G <- graph(list(A = c("B", "C"), B = "C", C = "A"))
