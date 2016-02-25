@@ -16,5 +16,5 @@ Suggests:
 Imports:
     argufy,
     utils
-Remotes: mangothecat/argufy
+Remotes: MangoTheCat/argufy
 RoxygenNote: 5.0.1
