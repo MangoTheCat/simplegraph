@@ -7,7 +7,7 @@
 topological_sort(graph)
 }
 \arguments{
-\item{graph}{Input graph.}
+\item{graph}{\assert{is_simplegraph} Input graph.}
 }
 \value{
 Character vector of vertex ids, in topological order.

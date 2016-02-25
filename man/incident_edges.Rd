@@ -7,7 +7,7 @@
 incident_edges(graph, mode = c("out", "in", "all", "total"))
 }
 \arguments{
-\item{graph}{Input graph.}
+\item{graph}{\assert{is_simplegraph} Input graph.}
 
 \item{mode}{Whether to use \code{out} edges, \code{in} edges or
 \code{all} edges.}

@@ -7,7 +7,7 @@
 size(graph)
 }
 \arguments{
-\item{graph}{The graph.}
+\item{graph}{\assert{is_simplegraph} The graph.}
 }
 \value{
 Numeric scalar, the number of edges.

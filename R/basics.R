@@ -1,7 +1,7 @@
 
 #' Vertex ids of a graph
 #'
-#' @param graph The graph.
+#' @param graph \assert{is_simplegraph} The graph.
 #' @return Character vector of vertex ids.
 #'
 #' @export
@@ -16,7 +16,7 @@ vertex_ids <- function(graph) {
 
 #' Vertices of a graph, with metadata
 #'
-#' @param graph The graph.
+#' @param graph \assert{is_simplegraph} The graph.
 #' @return Character vector of vertex names.
 #'
 #' @family simple queries
@@ -55,7 +55,7 @@ vertices <- function(graph) {
 
 #' Edges of a graph
 #'
-#' @param graph The graph
+#' @param graph \assert{is_simplegraph} The graph
 #' @return Data frame of edge data and metadata. The tail and head
 #'   vertices are in the fist two columns. The rest of the columns are
 #'   metadata.
@@ -98,7 +98,7 @@ edges <- function(graph) {
 #'
 #' The order of the graph is the number of vertices.
 #'
-#' @param graph The graph.
+#' @param graph \assert{is_simplegraph} The graph.
 #' @return Numeric scalar, the number of vertices.
 #'
 #' @family simple queries
@@ -114,7 +114,7 @@ order <- function(graph) {
 
 #' The size of the graph is the number of edges
 #'
-#' @param graph The graph.
+#' @param graph \assert{is_simplegraph} The graph.
 #' @return Numeric scalar, the number of edges.
 #'
 #' @export
@@ -131,7 +131,7 @@ size <-function(graph) {
 #'
 #' A vertex is adjacent is it is either a successor, or a predecessor.
 #'
-#' @param graph The graph.
+#' @param graph \assert{is_simplegraph} The graph.
 #' @return A named list of character vectors, the adjacent vertices
 #'   for each vertex.
 #'
@@ -148,7 +148,7 @@ adjacent_vertices <- function(graph) {
 
 #' Predecessors and successors
 #'
-#' @param graph Input graph
+#' @param graph \assert{is_simplegraph} Input graph
 #' @return Named list of character vectors, the predecessors or
 #'   the successors of each vertex.
 #'
@@ -172,7 +172,7 @@ successors <- function(graph) {
 
 #' Incident edges
 #'
-#' @param graph Input graph.
+#' @param graph \assert{is_simplegraph} Input graph.
 #' @param mode Whether to use \code{out} edges, \code{in} edges or
 #'   \code{all} edges.
 #' @return A list of data frames, each a set of edges.
@@ -216,7 +216,7 @@ incident_edges <- function(graph, mode = c("out", "in", "all", "total")) {
 
 #' Degree of vertices
 #'
-#' @param graph Input graph.
+#' @param graph \assert{is_simplegraph} Input graph.
 #' @param mode Whether to calculate \code{out}-degree, \code{in}-degree,
 #'   or the \code{total} degree.
 #' @return Named numeric vector of degrees.

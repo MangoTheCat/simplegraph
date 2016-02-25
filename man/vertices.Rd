@@ -7,7 +7,7 @@
 vertices(graph)
 }
 \arguments{
-\item{graph}{The graph.}
+\item{graph}{\assert{is_simplegraph} The graph.}
 }
 \value{
 Character vector of vertex names.

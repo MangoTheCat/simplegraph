@@ -1,9 +1,10 @@
 
 #' Breadth-first search of a graph
 #'
-#' @param graph Input graph.
-#' @param from Character vector, which vertices to start the search
-#'   from. By default all vertices are attempted.
+#' @param graph \assert{is_simplegraph} Input graph.
+#' @param from \assert{is_vertices_of(., graph)} Character vector,
+#'   which vertices to start the search from. By default all vertices are
+#'   attempted.
 #' @return Character vector of the named of the visited vertices,
 #'   in the order of their visit.
 #'

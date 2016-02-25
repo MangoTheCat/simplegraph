@@ -7,7 +7,7 @@
 strength(graph, mode = c("out", "in", "total", "all"))
 }
 \arguments{
-\item{graph}{Input graph.}
+\item{graph}{\assert{is_simplegraph} Input graph.}
 
 \item{mode}{Whether to consider incoming (\code{in}),
 outgoing (\code{out}) or all (\code{total}) edges.}

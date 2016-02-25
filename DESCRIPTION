@@ -14,5 +14,7 @@ BugReports: https://github.com/mangothecat/simplegraph/issues
 Suggests:
     testthat
 Imports:
+    argufy,
     utils
+Remotes: mangothecat/argufy
 RoxygenNote: 5.0.1

@@ -7,7 +7,7 @@
 transpose(graph)
 }
 \arguments{
-\item{graph}{Input graph}
+\item{graph}{\assert{is_simplegraph} Input graph}
 }
 \value{
 Transposed graph.

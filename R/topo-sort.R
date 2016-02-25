@@ -1,7 +1,7 @@
 
 #' Topological sorting of a graph
 #'
-#' @param graph Input graph.
+#' @param graph \assert{is_simplegraph} Input graph.
 #' @return Character vector of vertex ids, in topological order.
 #'
 #' @export

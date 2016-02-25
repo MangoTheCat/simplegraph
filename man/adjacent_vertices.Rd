@@ -7,7 +7,7 @@
 adjacent_vertices(graph)
 }
 \arguments{
-\item{graph}{The graph.}
+\item{graph}{\assert{is_simplegraph} The graph.}
 }
 \value{
 A named list of character vectors, the adjacent vertices

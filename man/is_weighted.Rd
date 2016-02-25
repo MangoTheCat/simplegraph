@@ -7,7 +7,7 @@
 is_weighted(graph)
 }
 \arguments{
-\item{graph}{The graph.}
+\item{graph}{\assert{is_simplegraph} The graph.}
 }
 \description{
 Is the graph weighted?

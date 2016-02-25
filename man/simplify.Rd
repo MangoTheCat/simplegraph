@@ -7,7 +7,7 @@
 simplify(graph)
 }
 \arguments{
-\item{graph}{Input graph.}
+\item{graph}{\assert{is_simplegraph} Input graph.}
 }
 \value{
 Another graph, with the multiple and loop edges removed.

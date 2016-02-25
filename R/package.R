@@ -8,6 +8,7 @@
 #'
 #' @docType package
 #' @name simplegraph
+#' @importFrom argufy argufy_me
 NULL
 
 #' Create a graph
@@ -91,7 +92,7 @@ graph <- function(x, ...)
 #' This is mainly for internal checks, but occasionally it
 #' might be useful externally.
 #'
-#' @param x Graph.
+#' @param x \assert{is_simplegraph} Graph.
 #' @param ... Extra arguments are curently ignored.
 #'
 #' @export

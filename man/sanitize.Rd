@@ -7,7 +7,7 @@
 sanitize(x, ...)
 }
 \arguments{
-\item{x}{Graph.}
+\item{x}{\assert{is_simplegraph} Graph.}
 
 \item{...}{Extra arguments are curently ignored.}
 }
