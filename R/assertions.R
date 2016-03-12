@@ -7,6 +7,7 @@
 #' @return TRUE if \code{x} is a \code{simplegraph} object. \code{FALSE}
 #'   otherwise.
 #' @keywords internal
+#' @importFrom methods is
 
 is_simplegraph <- function(x) {
   is(x, "simplegraph")

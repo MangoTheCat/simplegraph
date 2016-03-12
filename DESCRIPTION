@@ -14,6 +14,7 @@ BugReports: https://github.com/mangothecat/simplegraph/issues
 Suggests:
     testthat
 Imports:
+    methods,
     argufy,
     utils
 Remotes: gaborcsardi/argufy
