@@ -17,5 +17,6 @@ Imports:
     methods,
     argufy,
     utils
+RdMacros: argufy
 Remotes: gaborcsardi/argufy
 RoxygenNote: 5.0.1

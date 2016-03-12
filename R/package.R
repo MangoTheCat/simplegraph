@@ -11,6 +11,9 @@
 #' @importFrom argufy argufy_me
 NULL
 
+## To turn on argument checks
+argufy::argufy_me()
+
 #' Create a graph
 #'
 #' Graphs can be specified as adjacency lists or (two) data frames.
