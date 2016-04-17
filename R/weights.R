@@ -1,7 +1,7 @@
 
 #' Is the graph weighted?
 #'
-#' @param graph \assert{is_simplegraph} The graph.
+#' @param graph The graph.
 #'
 #' @export
 #' @examples
@@ -56,7 +56,7 @@ is_weighted.simplegraph_df <- function(graph) {
 #' For non-weighted graphs, the degree is returned as a
 #' fallback.
 #'
-#' @param graph \assert{is_simplegraph} Input graph.
+#' @param graph Input graph.
 #' @param mode Whether to consider incoming (\code{in}),
 #'   outgoing (\code{out}) or all (\code{total}) edges.
 #' @return Named numeric vector.

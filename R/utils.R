@@ -4,8 +4,8 @@
 #' Elements with common names are concatenated. If both lists have
 #' \code{NULL} for an element, then \code{default} is used instead.
 #'
-#' @param list1 \assert{is.list}
-#' @param list2 \assert{is.list}
+#' @param list1 First list.
+#' @param list2 Second list.
 #' @keywords internal
 
 merge_named_lists <- function(list1, list2, default = character()) {

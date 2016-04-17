@@ -7,9 +7,9 @@
 merge_named_lists(list1, list2, default = character())
 }
 \arguments{
-\item{list1}{\assert{is.list}}
+\item{list1}{First list.}
 
-\item{list2}{\assert{is.list}}
+\item{list2}{Second list.}
 }
 \description{
 Elements with common names are concatenated. If both lists have

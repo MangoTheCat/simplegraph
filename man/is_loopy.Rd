@@ -7,7 +7,7 @@
 is_loopy(graph)
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} The input graph.}
+\item{graph}{The input graph.}
 }
 \value{
 Logical scalar.

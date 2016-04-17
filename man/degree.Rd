@@ -7,7 +7,7 @@
 degree(graph, mode = c("out", "in", "total", "all"))
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} Input graph.}
+\item{graph}{Input graph.}
 
 \item{mode}{Whether to calculate \code{out}-degree, \code{in}-degree,
 or the \code{total} degree.}

@@ -15,8 +15,5 @@ Suggests:
     testthat
 Imports:
     methods,
-    argufy,
     utils
-RdMacros: argufy
-Remotes: gaborcsardi/argufy
-RoxygenNote: 5.0.1
+RoxygenNote: 5.0.1.9000

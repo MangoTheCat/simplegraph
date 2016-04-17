@@ -7,7 +7,7 @@
 vertex_ids(graph)
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} The graph.}
+\item{graph}{The graph.}
 }
 \value{
 Character vector of vertex ids.

@@ -7,9 +7,9 @@
 bfs(graph, from = vertex_ids(graph))
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} Input graph.}
+\item{graph}{Input graph.}
 
-\item{from}{\assert{is_vertices_of(., graph)} Character vector,
+\item{from}{Character vector,
 which vertices to start the search from. By default all vertices are
 attempted.}
 }

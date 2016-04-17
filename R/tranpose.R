@@ -5,7 +5,7 @@
 #' of edges, but all edge directions are opposite comparated to the
 #' original graph.
 #'
-#' @param graph \assert{is_simplegraph} Input graph
+#' @param graph Input graph
 #' @return Transposed graph.
 #'
 #' @export

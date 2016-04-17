@@ -10,7 +10,7 @@ predecessors(graph)
 successors(graph)
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} Input graph}
+\item{graph}{Input graph}
 }
 \value{
 Named list of character vectors, the predecessors or

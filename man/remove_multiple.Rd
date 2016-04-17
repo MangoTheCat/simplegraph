@@ -7,7 +7,7 @@
 remove_multiple(graph)
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} Input graph.}
+\item{graph}{Input graph.}
 }
 \value{
 Graph, without the multiple edges. (More precisely, from

@@ -7,7 +7,7 @@
 order(graph)
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} The graph.}
+\item{graph}{The graph.}
 }
 \value{
 Numeric scalar, the number of vertices.

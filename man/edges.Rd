@@ -7,7 +7,7 @@
 edges(graph)
 }
 \arguments{
-\item{graph}{\assert{is_simplegraph} The graph}
+\item{graph}{The graph}
 }
 \value{
 Data frame of edge data and metadata. The tail and head

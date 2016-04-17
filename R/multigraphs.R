@@ -3,7 +3,7 @@
 #'
 #' A simple graph contains no loop and multiple edges.
 #'
-#' @param graph \assert{is_simplegraph} The input graph.
+#' @param graph The input graph.
 #' @return Logical scalar.
 #'
 #' @family multigraphs
@@ -24,7 +24,7 @@ is_simple <- function(graph) {
 #' A loopy graph has at least one loop edge: an edge from a vertex to
 #' itself.
 #'
-#' @param graph \assert{is_simplegraph} The input graph.
+#' @param graph The input graph.
 #' @return Logical scalar.
 #'
 #' @family multigraphs
@@ -53,7 +53,7 @@ is_loopy <- function(graph) {
 #' A multigraph has at least one pair or multiple edges,
 #' edges connecting the same (ordered) pair of vertices.
 #'
-#' @param graph \assert{is_simplegraph} Input graph.
+#' @param graph Input graph.
 #' @return Logical scalar.
 #'
 #' @family multigraphs
@@ -78,7 +78,7 @@ is_multigraph <- function(graph) {
 
 #' Remove multiple and loop edges from a graph
 #'
-#' @param graph \assert{is_simplegraph} Input graph.
+#' @param graph Input graph.
 #' @return Another graph, with the multiple and loop edges removed.
 #'
 #' @family multigraphs
@@ -96,7 +96,7 @@ simplify <- function(graph) {
 
 #' Remove loop edges from a graph
 #'
-#' @param graph \assert{is_simplegraph} Input graph
+#' @param graph Input graph
 #' @return Graph, with loop edges removed.
 #'
 #' @family multigraphs
@@ -135,7 +135,7 @@ remove_loops.simplegraph_adjlist <- function(graph) {
 
 #' Remove multiple edges from a graph
 #'
-#' @param graph \assert{is_simplegraph} Input graph.
+#' @param graph Input graph.
 #' @return Graph, without the multiple edges. (More precisely, from
 #'   each set of multiple edges, only one, the first one, is kept.)
 #'
